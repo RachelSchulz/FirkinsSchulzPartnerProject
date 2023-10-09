@@ -47,7 +47,7 @@ public class EditEmployeeServlet extends HttpServlet {
 				Integer tempId = Integer.parseInt(request.getParameter("id"));
 				ListEmployee itemToUpdate = dao.searchForItemById(tempId);
 				itemToUpdate.setName(name);
-				itemToUpdate.setDepartment(department);
+				itemToUpdate.getDepartment().setDepartmentName(department);
 				itemToUpdate.setHours2(hours2);
 				itemToUpdate.setPayperhour2(payperhour2);
 				dao.updateEmployee(itemToUpdate);

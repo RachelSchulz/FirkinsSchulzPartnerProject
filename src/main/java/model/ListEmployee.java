@@ -1,9 +1,12 @@
 package model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="Employees")
@@ -14,24 +17,26 @@ public class  ListEmployee{
 @Column(name="ID")
 private int id;
 @Column(name="NAME")
-private
-String name;
-@Column(name="DEPARTMENT")
-private
-String department;
+private String name;
+//@Column(name="DEPARTMENT")
+//private
+//String department;
 @Column(name="HOURS")
 private
 int hours2;
 @Column(name="PAYPERHOUR")
 private
 double payperhour2;
+@ManyToOne(cascade = CascadeType.MERGE)
+@JoinColumn(name= "DEPARTMENTID", nullable=false)
+private Department department = new Department();
 
 public ListEmployee(){
 	
 }
 
 public ListEmployee
-( String name, String department, int hours2, double payperhour2){
+( String name, Department department, int hours2, double payperhour2){
 this.name = name;
 this.department = department;
 this.hours2 = hours2;
@@ -50,12 +55,7 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-public String getDepartment() {
-	return department;
-}
-public void setDepartment(String department) {
-	this.department = department;
-}
+
 public int getHours2() {
 	return hours2;
 }
@@ -75,5 +75,17 @@ return this.name + ": " +this.department;
 public String returnEmployeePay( ) {
 return "Pay this week:" + (this.hours2 * this.payperhour2);
 }
+
+public Department getDepartment() {
+	return department;
+}
+
+public void setDepartment(Department department) {
+	this.department = department;
+}
+
+
+
+
 
 }

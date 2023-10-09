@@ -31,9 +31,12 @@ public class AddEmployeeServlet extends HttpServlet {
 		String payperhour = request.getParameter("payperhour");
 		int hours2 = Integer.parseInt(hours);
 		double payperhour2 = Double.parseDouble(payperhour); 
-		
-		ListEmployee li =new ListEmployee(name, department, hours2, payperhour2);
+		ListEmployee li = new ListEmployee();
 		ListEmployeeHelper dao = new ListEmployeeHelper();
+		li.setName(name);
+		li.setHours2(hours2);
+		li.setPayperhour2(payperhour2);
+		li.getDepartment().setDepartmentName(department);
 		dao.insertItem(li);
 		getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 	}

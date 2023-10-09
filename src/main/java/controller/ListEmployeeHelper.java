@@ -8,10 +8,12 @@ import javax.persistence.TypedQuery;
 import model.ListEmployee;
 
 public class ListEmployeeHelper {
-static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("ShoppingListJPA");
+static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("EmployeeJPA");
 
 public void insertItem(ListEmployee li) {
 	EntityManager em = emfactory.createEntityManager();
+	DepartmentHelper helper = new DepartmentHelper();
+	li.setDepartment(helper.searchDepartmentByName(li.getDepartment().getDepartmentName()));
 	em.getTransaction().begin();
 	em.persist(li);	
 	em.getTransaction().commit();
