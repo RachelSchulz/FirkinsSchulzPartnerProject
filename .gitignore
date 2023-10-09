@@ -27,3 +27,5 @@
 
 # Persistence.xml file
 persistence.xml
+/build/
+/target/
