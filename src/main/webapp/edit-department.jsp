@@ -4,18 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add A Department</title>
+<title>Edit A Department</title>
 </head>
 <body>
-	<form action="addDepartmentServlet" method="post">
-		Department Name: <input type="text" name="name" size="25">
-		Manager Name: <input type="text" name="managerName" size="25">
-		<input type="submit" value="Submit" />
+	<form action="editDepartmentServlet" method="post">
+		Current Department Name: <input type="text" name="oldName" size="25"/>
+		New Dept Name: <input type="text" name="newName" size="25"/>
+		Dept Manager Name: <input type="text" name="managerName" size="25"/>
+		<input type="submit" value="Update" />
 	</form>
-	
 	<p><a href="index.jsp">Home</a></p>
 	<p><a href="viewAllDepartmentsServlet">View All Departments</a></p>
 	<p><a href="viewAllEmployeesServlet">View All Employees</a></p>
-
 </body>
 </html>

@@ -28,6 +28,7 @@ public class Department {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int departmentId;
 	private String departmentName;
+	private String dptManagerName;
 	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<ListEmployee> employees;
 	public Department() {
@@ -50,6 +51,12 @@ public class Department {
 	public void setDepartmentName(String departmentName) {
 		this.departmentName = departmentName;
 	}
+	public String getDptManagerName() {
+		return dptManagerName;
+	}
+	public void setDptManagerName(String dptManagerName) {
+		this.dptManagerName = dptManagerName;
+	}
 	public List<ListEmployee> getEmployees() {
 		return employees;
 	}
@@ -57,7 +64,6 @@ public class Department {
 		this.employees = employees;
 	}
 	
-	
-	
+
 	
 }
