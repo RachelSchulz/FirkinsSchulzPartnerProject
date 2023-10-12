@@ -1,8 +1,3 @@
-/**
-* Rachel Schulz - rsgoodrich
-* CIS175 - Fall 2023
-* Oct 9, 2023
-*/
 package model;
 
 import java.util.List;
@@ -16,11 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- * @author Rachel Schulz - rsgoodrich
- * CIS175 - Fall 2023
- * Oct 9, 2023
- */
 @Entity
 @Table(name="department")
 public class Department {
@@ -29,7 +19,7 @@ public class Department {
 	private int departmentId;
 	private String departmentName;
 	private String dptManagerName;
-	@OneToMany(mappedBy = "department", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="department", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<ListEmployee> employees;
 	public Department() {
 		super();
