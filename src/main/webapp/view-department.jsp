@@ -8,16 +8,16 @@
 <title>View All Departments</title>
 </head>
 <body>
-	All Departments:
+	<h2>All Departments</h2>
 	<table>
-		<c:forEach items="$requestScope.allItems" var="currentdepartment">
+		<c:forEach items="${requestScope.allItems}" var="currentdepartment">
 			<tr>
-				<td>${currentdepartment.departmentName} |</td>
-				<td>${currentdepartment.dptManagerName} </td>
+				<td>Department: ${currentdepartment.departmentName}|</td>
+				<td>Manager: ${currentdepartment.dptManagerName} </td>
 			</tr>
 		</c:forEach>
 	</table>
-	<p><a href="index.jsp">Home</a></p>
+	<p><a href="index.jsp">Home - Add Employees</a></p>
 	<p><a href="add-department.jsp">Add Another Department</a></p>
 	<p><a href="edit-department.jsp">Edit A Department</a></p>
 </body>

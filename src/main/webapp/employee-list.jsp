@@ -8,21 +8,24 @@
 <title>Employee List</title>
 </head>
 <body>
+<h2>All Employees</h2>
 <form method = "post" action="navigationServlet">
 <table>
 <c:forEach items= "${requestScope.allEmployees}" var= "currentitem">
 <tr>
 <td><input type="radio"name="id"value="${currentitem.id}"></td>
-<td>${currentitem.name}</td>
-<td>${currentitem.department}</td>
-<td>${currentitem.hours}</td>
-<td>${currentitem.payperhour}</td>
+<td>Employee: ${currentitem.name}|</td>
+<td>Department: ${currentitem.department.departmentName}|</td>
+<td>Hours: ${currentitem.hours2}|</td>
+<td>Pay Rate: ${currentitem.payperhour2}</td>
 </tr>
 </c:forEach>
 </table>
 <input type ="submit"value ="edit"name="doThisToEmployee">
 <input type ="submit"value ="delete"name="doThisToEmployee">
-<input type="submit"value ="add"name ="doThisToEmployee">
+	<p><a href="index.jsp">Home - Add Employees</a></p>
+	<p><a href="add-department.jsp">Add Another Department</a></p>
+	<p><a href="edit-department.jsp">Edit A Department</a></p>
 </form>
 </body>
 </html>

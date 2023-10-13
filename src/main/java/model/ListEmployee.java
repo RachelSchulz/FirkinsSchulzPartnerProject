@@ -22,8 +22,7 @@ private String name;
 //private
 //String department;
 @Column(name="HOURS")
-private
-int hours2;
+private int hours2;
 @Column(name="PAYPERHOUR")
 private
 double payperhour2;

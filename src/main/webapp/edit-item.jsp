@@ -8,11 +8,12 @@
 <title>Edit Employees</title>
 </head>
 <body>
-<form action="editAnimalServlet"method="post">
+<h2>Edit Employees</h2>
+<form action="editEmployeesServlet"method="post">
 Name: <input type ="text"name ="name"value="${itemToEdit.name}">
-Department: <input type ="text"name ="name"value="${itemToEdit.department}">
-Hours: <input type ="text"name ="name"value="${itemToEdit.hours}">
-Pay Per Hour: <input type ="text"name ="name"value="${itemToEdit.payperhour}">
+Department: <input type ="text"name ="department"value="${itemToEdit.department.departmentName}">
+Hours: <input type ="text"name ="hours"value="${itemToEdit.hours2}">
+Pay Per Hour: <input type ="text"name ="payperhour"value="${itemToEdit.payperhour2}">
 <input type ="hidden"name ="id"value="${itemToEdit.id}">
 <input type ="submit"value="Save Edited Employees">
 </form>

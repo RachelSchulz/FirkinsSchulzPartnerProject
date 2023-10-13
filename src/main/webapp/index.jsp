@@ -7,6 +7,8 @@
 <title>Employee Home</title>
 </head>
 <body>
+<h1>Employee Database</h1>
+<h2>Add an Employee</h2>
 <form action ="addEmployeeServlet"method="post"> 
 Name <input type ="text"name ="name"> 
 
@@ -19,7 +21,7 @@ Pay per hour <input type ="text"name ="payperhour">
 <input type ="submit"value="Add Name">
 </form>
 <br />
-<p><a href ="viewAllEmployeesServlet">View the complete list</a></p>
+<p><a href ="viewAllEmployeesServlet">View the complete list of employees</a></p>
 <p><a href ="add-department.jsp">Add Department</a></p>
 </body>
 </html>

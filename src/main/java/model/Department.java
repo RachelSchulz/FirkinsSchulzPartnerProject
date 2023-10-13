@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity(name="deparment")
+@Entity(name="department")
 @Table(name="department")
 public class Department {
 	@Id
@@ -54,6 +54,6 @@ public class Department {
 		this.employees = employees;
 	}
 	
-
+	
 	
 }

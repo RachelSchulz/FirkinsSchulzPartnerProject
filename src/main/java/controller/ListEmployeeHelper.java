@@ -28,17 +28,7 @@ public void insertItem(ListEmployee li) {
 	public void deleteItem(ListEmployee toDelete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<ListEmployee> typedQuery = em.createQuery("select li from ListEmployee li where li.name = :selectedName and li.department= :selectedDepartment  and li.hours= :selectedHours  and li.payperhour= :selectedPayperhour", ListEmployee.class);
-		
-		typedQuery.setParameter("selectedName", toDelete.getName());
-		typedQuery.setParameter("selectedDepartment",toDelete.getDepartment());
-		typedQuery.setParameter("selectedHours", toDelete.getHours2());
-		typedQuery.setParameter("selectedPayperhour",toDelete.getPayperhour2());
-		typedQuery.setMaxResults(1);
-		
-		ListEmployee result = typedQuery.getSingleResult();
-		
-		em.remove(result);
+		em.remove(em.find(ListEmployee.class, toDelete.getId()));
 		em.getTransaction().commit();
 		em.close();
 		}

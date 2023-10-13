@@ -45,6 +45,8 @@ public class EditDepartmentServlet extends HttpServlet {
 		Department toUpdate = helper.searchDepartmentByName(oldName);
 		toUpdate.setDepartmentName(name);
 		toUpdate.setDptManagerName(mgrName);
+		helper.update(toUpdate);
+		getServletContext().getRequestDispatcher("/viewAllDepartmentsServlet").forward(request, response);
 	}
 
 }

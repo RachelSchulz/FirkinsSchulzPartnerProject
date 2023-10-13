@@ -51,7 +51,7 @@ public class EditEmployeeServlet extends HttpServlet {
 				itemToUpdate.setHours2(hours2);
 				itemToUpdate.setPayperhour2(payperhour2);
 				dao.updateEmployee(itemToUpdate);
-				getServletContext().getRequestDispatcher("/viewAllAnimalsServlet").forward(request, response);
+				getServletContext().getRequestDispatcher("/viewAllEmployeesServlet").forward(request, response);
 				doGet(request, response);
 	}
 
