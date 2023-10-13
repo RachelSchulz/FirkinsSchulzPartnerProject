@@ -32,7 +32,7 @@ double payperhour2;
 private Department department = new Department();
 
 public ListEmployee(){
-	
+	super();
 }
 
 public ListEmployee
