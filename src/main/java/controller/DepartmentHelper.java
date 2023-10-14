@@ -63,6 +63,7 @@ public class DepartmentHelper {
 		Department dbEntity = manager.find(Department.class, d.getDepartmentId());
 		manager.getTransaction().begin();
 		dbEntity.setDepartmentName(d.getDepartmentName());
+		dbEntity.setDptManagerName(d.getDptManagerName());
 		manager.getTransaction().commit();
 		manager.close();
 	}
